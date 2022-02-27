@@ -157,11 +157,7 @@ class _UserSupportWidgetState extends State<UserSupportWidget> {
   }
 
   Widget _createApp(BuildContext context, Widget home) {
-    if (AppEnvironment.designSystem == AppDesignSystem.material) {
-      return _createMaterialApp(context, home);
-    } else {
-      return _createCupertinoApp(context, home);
-    }
+    return _createMaterialApp(context, home);
   }
 
   Widget _createMaterialApp(BuildContext context, Widget home) {
@@ -169,15 +165,6 @@ class _UserSupportWidgetState extends State<UserSupportWidget> {
       title: 'Support',
       theme: _createMaterialTheme(context),
       home: home,
-    );
-  }
-
-  Widget _createCupertinoApp(BuildContext context, Widget home) {
-    return CupertinoApp(
-      home: home,
-      theme: MaterialBasedCupertinoThemeData(
-        materialTheme: _createMaterialTheme(context),
-      ),
     );
   }
 

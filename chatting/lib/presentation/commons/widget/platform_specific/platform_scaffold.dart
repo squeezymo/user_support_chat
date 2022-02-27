@@ -30,14 +30,25 @@ class ScaffoldFactory {
         navigationBar: isEmbedded
             ? null
             : CupertinoNavigationBar(
-                middle: title == null ? null : Text(title),
+                automaticallyImplyLeading: true,
+                backgroundColor: Colors.white10,
+                // previousPageTitle: "TODO",
+                middle: title == null
+                    ? null
+                    : Text(
+                        title,
+                        style: const TextStyle().apply(color: Colors.blue),
+                      ),
                 trailing: actions == null
                     ? null
-                    : Row(
+                    : Wrap(
+                        alignment: WrapAlignment.end,
                         children: actions,
                       ),
               ),
-        child: body,
+        child: SafeArea(
+          child: body,
+        ),
       );
     }
   }

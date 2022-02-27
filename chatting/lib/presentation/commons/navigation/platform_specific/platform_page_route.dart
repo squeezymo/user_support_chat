@@ -15,6 +15,7 @@ class PlatformPageRouteFactory {
     } else {
       return CupertinoPageRoute(
         builder: builder,
+        title: title,
       );
     }
   }
