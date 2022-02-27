@@ -184,7 +184,8 @@ class _UserSupportWidgetState extends State<UserSupportWidget> {
   ThemeData _createMaterialTheme(BuildContext context) {
     return ThemeData(
       primarySwatch: Colors.grey,
-      scaffoldBackgroundColor: getScaffoldBackgroundColor(),
+      splashColor: getBackgroundColor(),
+      scaffoldBackgroundColor: getBackgroundColor(),
       appBarTheme: const AppBarTheme(
         backgroundColor: Color.fromARGB(255, 36, 33, 36),
         iconTheme: IconThemeData(color: Colors.white),
@@ -207,7 +208,7 @@ class _UserSupportWidgetState extends State<UserSupportWidget> {
     );
   }
 
-  Color getScaffoldBackgroundColor() {
+  Color getBackgroundColor() {
     if (widget.isEmbedded && _appId == "Filch") {
       return Colors.black;
     }
